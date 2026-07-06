@@ -1,0 +1,305 @@
+# Instincts generated from https://github.com/AReid987/bytebot
+# Generated: 2026-07-06T10:09:20.897Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: bytebot-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/AReid987/bytebot
+---
+
+# Bytebot Commit Length
+
+## Action
+
+Write moderate-length commit messages (~64 characters)
+
+## Evidence
+
+- Average commit message length: 64 chars
+- Based on 1 commits
+
+---
+id: bytebot-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/AReid987/bytebot
+---
+
+# Bytebot Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: bytebot-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/AReid987/bytebot
+---
+
+# Bytebot Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: bytebot-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/AReid987/bytebot
+---
+
+# Bytebot Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: bytebot-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/AReid987/bytebot
+---
+
+# Bytebot Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: bytebot-workflow-dependency-update-multi-package
+trigger: "when doing dependency update multi package"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/AReid987/bytebot
+---
+
+# Bytebot Workflow Dependency Update Multi Package
+
+## Action
+
+Follow the dependency-update-multi-package workflow:
+1. Identify outdated dependencies in each package.
+2. Update package.json and package-lock.json in each affected package directory.
+3. Commit all updated files together, often with detailed changelogs or dependency lists.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: packages/*/package.json, packages/*/package-lock.json
+
+---
+id: bytebot-instinct-naming-files
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Naming Files
+
+## Action
+
+Use kebab-case for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+
+---
+id: bytebot-instinct-naming-functions
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Naming Functions
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: bytebot-instinct-naming-classes
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Naming Classes
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: bytebot-instinct-naming-constants
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Naming Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: bytebot-instinct-import-style
+trigger: "When importing modules within the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: bytebot-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: bytebot-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Test Location
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: bytebot-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Git Commit Format
+
+## Action
+
+Write freeform commit messages without a strict prefix, typically summarizing the change in one line (~64 characters)
+
+## Evidence
+
+- Pattern in commits.type
+- Pattern in commits.averageLength
+- Example: 'Bump the npm_and_yarn group across 3 directories with 22 updates'
+
+---
+id: bytebot-instinct-workflow-dependency-update
+trigger: "When dependencies across multiple packages are outdated in the monorepo"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: AReid987/bytebot
+---
+
+# Bytebot Instinct Workflow Dependency Update
+
+## Action
+
+Identify outdated dependencies in each package, update package.json and package-lock.json in each affected package directory, and commit all updated files together, often with detailed changelogs or dependency lists
+
+## Evidence
+
+- Workflow: dependency-update-multi-package
+- Pattern in workflow.commitSequence
+- Example commit: 'Bump the npm_and_yarn group across 3 directories with 22 updates'
+
